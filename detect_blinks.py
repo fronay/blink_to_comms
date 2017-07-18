@@ -79,6 +79,7 @@ fileStream = True
 # vs = VideoStream(src=0).start()
 # vs = VideoStream(usePiCamera=True).start()
 # fileStream = False
+# TODO: add line to switch VideoStream to webcam
 time.sleep(1.0)
 
 # loop over frames from the video stream
@@ -152,6 +153,9 @@ while True:
 				blinkLen.append(len(theBlink))
 				print "reassigned:" , altSignal[startBlinkFrame:framenumber]
 			timeseries.append((framenumber,0))
+			# TODO: call morse function on list so far
+			# if char detected, send new cv2.putText to section below
+			# 
 
 			# reset the eye frame counter
 			COUNTER = 0
