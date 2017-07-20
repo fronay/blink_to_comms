@@ -1,7 +1,6 @@
 """"In-progress mod of Adrian Rosebocks blink detector, to enable morse code translation"""
 # USAGE
-# python detect_blinks.py --shape-predictor shape_predictor_68_face_landmarks.dat --video blink_detection_demo.mp4
-#  
+# python detect_blinks.py --shape-predictor shape_predictor_68_face_landmarks.dat --video some_video.mp4
 # python detect_blinks.py --shape-predictor shape_predictor_68_face_landmarks.dat
 
 
@@ -74,12 +73,14 @@ predictor = dlib.shape_predictor(args["shape_predictor"])
 
 # start the video stream thread
 print("[INFO] starting video stream thread...")
-vs = FileVideoStream(args["video"]).start()
-fileStream = True
-# vs = VideoStream(src=0).start()
+### use FileVideoStream for pre-recorded video
+# vs = FileVideoStream(args["video"]).start()
+# fileStream = True
+
+### use VideoStream to enable webcam
+vs = VideoStream(src=0).start()
 # vs = VideoStream(usePiCamera=True).start()
-# fileStream = False
-# TODO: add line to switch VideoStream to webcam
+fileStream = False
 time.sleep(1.0)
 
 # loop over frames from the video stream
