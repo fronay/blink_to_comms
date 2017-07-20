@@ -51,8 +51,8 @@ args = vars(ap.parse_args())
 # frames the eye must be below the threshold
 
 # TODO : add calibration function for EYE_AR_THRESH at beginning of script
-EYE_AR_THRESH = 0.25
-EYE_AR_CONSEC_FRAMES = 10
+EYE_AR_THRESH = 0.3
+EYE_AR_CONSEC_FRAMES = 8
 MORSE_PAUSE = 8
 
 # initialize the frame counters and the total number of blinks
